@@ -9,6 +9,18 @@
   color: white;
 }
 
-.event-list {
-  font-size: large;
+.event-listing {
+  margin: 1em 30%;
+  padding: 0.5em;
+  font-size: 1em;
+  -webkit-box-shadow: 6px 6px 20px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: 6px 6px 20px -8px rgba(0,0,0,0.75);
+  box-shadow: 3px 3px 30px -8px rgba(0,0,0,0.75);
+}
+
+.event-image {
+  float: left;
+  margin: 0.5em;
+  width: 5em;
+  height: 5em;
 }

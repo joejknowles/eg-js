@@ -1,0 +1,6 @@
+exports[`test renders events as before 1`] = `
+<div
+  className="events-list">
+  
+</div>
+`;
