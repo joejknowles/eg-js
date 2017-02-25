@@ -1,6 +1,6 @@
 {
   "proxies": {
-      "/api/": {
+      "/events/": {
         "origin": "http://tech-test.egtools.co.uk"
       }
     }
