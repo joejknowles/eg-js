@@ -1,7 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import createLogger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
-import { parseDate } from './helpers/dates';
 import rootSaga from './sagas';
 import rootReducer from './reducers';
 
