@@ -11,7 +11,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('/events/').then((response) => {
+    const apiBaseUrl = process.env.NODE_ENV === 'production' ? '/events' : '';
+    fetch(apiBaseUrl + '/events/').then((response) => {
       return response.json();
     }).then((json) => {
       this.setState({ events: json });
