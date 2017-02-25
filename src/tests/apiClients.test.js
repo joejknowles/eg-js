@@ -1,7 +1,6 @@
 import * as apiClients from '../apiClients';
 import { mockFetch, mockResponse } from './testHelpers';
 
-
 describe('fetchEvents', () => {
   let fetch;
   beforeEach(() => {
