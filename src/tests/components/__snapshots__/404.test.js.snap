@@ -1,0 +1,5 @@
+exports[`test renders 404 page as before 1`] = `
+<h1>
+  404 - page not found. Oops
+</h1>
+`;

@@ -21,5 +21,8 @@ exports[`test renders events as before 1`] = `
   <Route
     component={[Function]}
     path="/" />
+  <Route
+    component={[Function]}
+    path="*" />
 </Router>
 `;
