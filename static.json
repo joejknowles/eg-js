@@ -1,0 +1,8 @@
+{
+  "root": "build/",
+  "proxies": {
+    "/events/": {
+      "origin": "http://tech-test.egtools.co.uk"
+    }
+  }
+}
