@@ -1,25 +1,29 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import Listing from './listing';
-import { fetchEvents } from '../apiClients';
+import { eventsSelector } from '../reducers'
 
-export default class Events extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { events: [] };
-  }
-
+export class Events extends Component {
   componentDidMount() {
-    fetchEvents().then((json) => {
-      this.setState({ events: json });
-    });
+    this.props.fetchEvents();
   }
 
   render() {
     return (
       <div className="events-list">
-        { this.state.events.map(Listing) }
+        { this.props.events.map(eventId => <Listing id={ eventId } key={ eventId } />) }
       </div>
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  events: eventsSelector(state)
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  fetchEvents: () => dispatch({ type: "FETCH_EVENTS_REQUEST" })
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Events);

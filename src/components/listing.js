@@ -1,6 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-export default (props) => (
+import { createEventSelector } from '../reducers'
+
+export const Listing = (props) => (
     <div key={ props.id } className="event-listing">
     <img src={ props.image } className="event-image" alt="event" />
       <h3 className="event-title">{ props.title }</h3>
@@ -9,3 +12,10 @@ export default (props) => (
       </p>
     </div>
 );
+
+
+const mapStateToProps = (state, { id }) => (
+  createEventSelector(id)
+);
+
+export default connect(mapStateToProps)(Listing);
