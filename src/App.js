@@ -22,9 +22,9 @@ class App extends Component {
         <div className="App-header">
           <h2>eg Tech Test</h2>
         </div>
-        <ul className="events-list">
+        <div className="events-list">
           { this.state.events.map(Listing) }
-        </ul>
+        </div>
       </div>
     );
   }
