@@ -1,0 +1,12 @@
+exports[`test renders listing as before 1`] = `
+<li>
+  <h3 />
+  <p>
+    , at 
+  </p>
+  <img
+    alt="event image"
+    className="event-image"
+    src={undefined} />
+</li>
+`;
