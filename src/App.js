@@ -3,6 +3,19 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { events: [] };
+  }
+
+  componentDidMount() {
+    fetch('/events/').then((response) => {
+      return response.json();
+    }).then((json) => {
+      this.setState({ events: json });
+    });
+  };
+
   render() {
     return (
       <div className="App">
