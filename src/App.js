@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Listing from './components/listing';
+import { fetchEvents } from './apiClients';
 
 class App extends Component {
   constructor(props) {
@@ -10,10 +11,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const apiBaseUrl = process.env.NODE_ENV === 'production' ? '/events' : '';
-    fetch(apiBaseUrl + '/events/').then((response) => {
-      return response.json();
-    }).then((json) => {
+    fetchEvents().then((json) => {
       this.setState({ events: json });
     });
   };
