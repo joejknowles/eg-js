@@ -1,0 +1,7 @@
+{
+  "proxies": {
+      "/api/": {
+        "origin": "http://tech-test.egtools.co.uk"
+      }
+    }
+}
