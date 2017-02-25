@@ -14,7 +14,7 @@ class App extends Component {
     fetchEvents().then((json) => {
       this.setState({ events: json });
     });
-  };
+  }
 
   render() {
     return (
