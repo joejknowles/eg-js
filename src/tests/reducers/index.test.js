@@ -1,13 +1,31 @@
-import { EventsById, Events } from '../../reducers';
+import { eventsById, events } from '../../reducers';
 
-describe('EventsById', () => {
+describe('eventsById', () => {
   it('returns empty object by default', () => (
-    expect(EventsById(undefined, {})).toEqual({})
+    expect(eventsById(undefined, {})).toEqual({})
   ));
+
+  it('returns events on fetch success', () => {
+    const events = { '125': { id: '125' } };
+    const actual = eventsById(undefined, {
+      type: 'FETCH_EVENTS_SUCCESS',
+      response: { entities: { events }}
+    });
+    expect(actual).toEqual(events);
+  });
 });
 
-describe('Events', () => {
+describe('events', () => {
   it('returns empty array by default', () => (
-    expect(Events(undefined, {})).toEqual([])
+    expect(events(undefined, {})).toEqual([])
   ));
+
+  it('returns events on fetch success', () => {
+    const result = [ '123', '316' ];
+    const actual = events(undefined, {
+      type: 'FETCH_EVENTS_SUCCESS',
+      response: { result }
+    })
+    expect(actual).toEqual(result);
+  });
 });
