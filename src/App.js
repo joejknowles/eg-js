@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Listing from './components/listing';
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -24,9 +26,7 @@ class App extends Component {
           <h2>eg Tech Test</h2>
         </div>
         <ul className="App-intro">
-          { this.state.events.map((event) => (
-            <li key={ event.id }>{ event.title }</li>
-          )) }
+          { this.state.events.map(Listing) }
         </ul>
       </div>
     );

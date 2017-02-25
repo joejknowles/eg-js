@@ -1,5 +1,8 @@
 {
   "root": "build/",
+  "routes": {
+    "/**": "index.html"
+  },
   "proxies": {
     "/*": {
       "origin": "http://tech-test.egtools.co.uk"
