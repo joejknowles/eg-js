@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/joejknowles/eg-js.svg?branch=master)](https://travis-ci.org/joejknowles/eg-js)
+
 This application is hosted on Heroku here: http://eg-js-test.herokuapp.com/
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
