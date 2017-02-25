@@ -1,10 +1,7 @@
 {
   "proxies": {
-    "/events/": {
-      "origin": "http://tech-test.egtools.co.uk"
-    },
-    "/": {
-      "origin": "eg-js-test.herokuapp.com"
+      "/events/": {
+        "origin": "http://tech-test.egtools.co.uk"
+      }
     }
-  }
 }
