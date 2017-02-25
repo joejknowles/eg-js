@@ -6,5 +6,6 @@ export default (props) => (
       <p>
         { props.date }, at { props.venue }
       </p>
+      <img src={ props.image } className="event-image" alt="event image" />
     </li>
 );
