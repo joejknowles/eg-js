@@ -1,4 +1,4 @@
-exports[`test renders events as before 1`] = `
+exports[`Events Component renders as before 1`] = `
 <div
   className="events-list">
   
