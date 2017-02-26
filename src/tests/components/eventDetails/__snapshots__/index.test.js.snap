@@ -1,0 +1,26 @@
+exports[`EventDetails component renders as before 1`] = `
+<div
+  className="event-details">
+  <img
+    alt="event"
+    className="event-image"
+    src="http://d13rtmsmlweq99.cloudfront.net/cms_media/images/events/948e6b789115dac236b33b5f606600ef.1467646509.jpg" />
+  <div
+    className="event-info">
+    <h2
+      className="event-title"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "The Warehouse Project || Tuskegee",
+        }
+      } />
+    <Unknown
+      date="Tuesday 27th December"
+      id="266970"
+      image="http://d13rtmsmlweq99.cloudfront.net/cms_media/images/events/948e6b789115dac236b33b5f606600ef.1467646509.jpg"
+      title="The Warehouse Project || Tuskegee"
+      type="club"
+      venue="Store Steet, Manchester" />
+  </div>
+</div>
+`;

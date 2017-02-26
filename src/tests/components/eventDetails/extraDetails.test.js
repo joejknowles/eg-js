@@ -1,0 +1,19 @@
+import ExtraDetails from '../../../components/eventDetails/extraDetails';
+
+import React from 'react';
+import ReactTestUtils from 'react-addons-test-utils';
+
+const shallowRenderer = ReactTestUtils.createRenderer();
+
+describe('EventDetails component', () => {
+  const detailProps = {
+    "id":"265727","title":"Quids In","url":"http://www.ticketarena.co.uk/events/Quids-In-20/index.html","date":"Monday 8th August","unixdate":1470690000,"venue":"Pryzm Nightclub, Leeds","image":"http://d13rtmsmlweq99.cloudfront.net/cms_media/images/events/469e2dae092982a7def605f011150279.1466782427.jpg","type":"club","information_title":"Quids In","information_description":"<p>â˜…â˜…QUIDS IN - MONDAYS AT PRYZM â˜…â˜…</p><p>DJS - (ANDY MORE, ABS &amp; MANNY BROWN) NEW VENUE!</p><p>Cheese/Singalong/Mash Up - Andy Moore/Abs</p><p>&amp;</p><p>R&amp;B/Hip-Hop - Manny Brown</p><p>- &pound;1 drinks<br />- &pound;1 entry<br />- PRYZM LEEDS</p><p>QUIDS IN @ PRYZM</p><p>-------------------------------------------------------------------------------</p><p>â˜…â˜… GUESTLISTâ˜…â˜…</p><p>Follow the link to add yourself to the &pound;1 Guestlist<br />LINK -&gt; http://bit.ly/PRYZMGuestlist</p><p>&loz; &pound;1 DRINKS<br />&loz; &pound;1 ENTRY BEFORE 11pm (on guestlist)<br />&loz; &pound;1 SHOTS ALL NIGHT<br />&loz; THE BIGGEST STUDENT NIGHT IN LEEDS<br />&loz; OPEN TIL 4AM</p><p>â˜…â˜…â˜…â˜…â˜…â˜… THE DOOR â˜…â˜…â˜…â˜…â˜…â˜…</p><p>â˜… Doors Open: 9.30pm - 4am<br />â˜… &pound;1 guestlist before 11, &pound;4 after.<br />â˜… &pound;5 without guestlist<br />â˜…â˜…OPEN UNTIL 4AMâ˜…â˜…<br />(Last entry 3am, last guestlist 1am)</p><p>â˜…â˜…â˜…â˜…â˜…â˜… DRINKS PRICES â˜…â˜…â˜…â˜…â˜…â˜…</p><p>QUIDS IN DRINKS MENU</p><p>&pound;1 VK<br />&pound;1 Vodka Mixer<br />&pound;1 Sourz<br />&pound;1 Jung-Bombs</p><p>Pryzm promotes safe and sensible drinking, know your limit and stay safe.</p><p>â˜…â˜…â˜…â˜…â˜…â˜… MUSIC â˜…â˜…â˜…â˜…â˜…â˜…</p><p>Room 1 - Pryzm - Held in the heart of the club, the elegant and visually stunning room will be host to former Halo and Quids in DJs Andy More and Abs who are returning with the Quids in vibe with all things House, RnB, Indie, Student Anthems and Party!</p><p>Room 2 - Curve - The state of the art low ceiling signature room, Curve is an intimate room with a sumptuous feel, bringing you your RnB and Hip Hop beats all night long delivered by Manny Brown.</p><p>16-18 Woodhouse Lane<br />Leeds<br />West Yorkshire<br />LS2 8LX</p><p>Pryzm promotes safe and sensible drinking, know your limit. www.drinkaware.co.uk</p>"
+  };
+
+  it('renders as before', () => {
+    const component = shallowRenderer.render(
+      <ExtraDetails { ...detailProps } />
+    );
+    expect(component).toMatchSnapshot();
+  });
+});
