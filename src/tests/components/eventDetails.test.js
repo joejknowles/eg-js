@@ -22,7 +22,7 @@ describe('EventDetails component', () => {
     const fetchEventDetailsMock = jest.fn();
     const component = shallow(
       <EventDetails
-        events={ [] }
+        { ...detailProps }
         fetchEventDetails={ fetchEventDetailsMock }
       />
     );
