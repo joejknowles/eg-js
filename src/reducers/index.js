@@ -31,7 +31,7 @@ export const events = (state = [], action) => {
   }
 };
 
-export const eventsSelector = (state) => state.events;
+export const eventsSelector = (state) => state.events.slice(0, 100);
 
 export const createEventSelector = (id) => (state) => (
   state.eventsById[id] || {}
