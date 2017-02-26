@@ -1,0 +1,7 @@
+exports[`Filters component renders as before 1`] = `
+<div
+  className="Filters">
+  <input
+    onChange={[Function]} />
+</div>
+`;

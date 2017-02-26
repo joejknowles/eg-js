@@ -1,4 +1,4 @@
-import { Events } from '../../components/events';
+import { Events } from '../../../components/events';
 
 import React from 'react';
 import ReactTestUtils from 'react-addons-test-utils';
