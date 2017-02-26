@@ -23,6 +23,9 @@ exports[`test renders events as before 1`] = `
     path="/" />
   <Route
     component={[Function]}
+    path="/event/:id" />
+  <Route
+    component={[Function]}
     path="*" />
 </Router>
 `;
