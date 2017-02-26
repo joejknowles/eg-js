@@ -32,6 +32,8 @@ export const events = (state = [], action) => {
 
 export const eventsSelector = (state) => state.events;
 
-export const createEventSelector = (id) => (state) => state.eventsById[id];
+export const createEventSelector = (id) => (state) => (
+  state.eventsById[id] || {}
+);
 
 export default combineReducers({ eventsById, events });
