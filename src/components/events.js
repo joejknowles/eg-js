@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 
 import Listing from './listing';
 import LoadingIndicator from './loadingIndicator';
-import { eventsSelector, eventsFirstLoadingSelector } from '../reducers'
+import { eventsFirstLoadingSelector } from '../reducers';
+import { filteredEventsSelector } from '../selectors/filter'
 
 export class Events extends Component {
   componentDidMount() {
@@ -26,7 +27,7 @@ export class Events extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  events: eventsSelector(state),
+  events: filteredEventsSelector(state),
   eventsLoading: eventsFirstLoadingSelector(state)
 });
 

@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import { eventsLoading } from './loading';
+import filters from './filters';
 import extend from 'extend';
 
 export const eventsById = (state = {}, action) => {
@@ -29,7 +30,11 @@ export const events = (state = [], action) => {
   }
 };
 
-export const eventsSelector = (state) => state.events.slice(0, 100);
+export const eventsSelector = (state) => state.events;
+
+export const currentTypeFilter = (state) => state.filters.type;
+
+export const typeSelector = (state, id) => createEventSelector(id)(state).type;
 
 export const createEventSelector = (id) => (state) => (
   state.eventsById[id] || {}
@@ -38,4 +43,4 @@ export const createEventSelector = (id) => (state) => (
 export const eventsFirstLoadingSelector = (state) =>
   state.eventsLoading && eventsSelector(state).length < 2;
 
-export default combineReducers({ eventsById, events, eventsLoading });
+export default combineReducers({ eventsById, events, eventsLoading, filters });
