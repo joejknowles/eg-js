@@ -11,8 +11,8 @@ export function* watchEventsRequests() {
   yield takeEvery('FETCH_EVENTS_REQUEST', fetchEvents);
 }
 
-export function* fetchEventDetails() {
-  const response = yield call(apiClients.fetchEvents);
+export function* fetchEventDetails({ id }) {
+  const response = yield call(apiClients.fetchEventDetails, id);
   yield put(fetchEventDetailsSuccess(response));
 }
 

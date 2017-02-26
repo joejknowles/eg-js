@@ -12,7 +12,7 @@ it('watchEventDetailsRequests', () => (
 
 describe('fetchEventDetails saga', () => {
   const mockId = '10900'
-  const gen = fetchEventDetails(mockId);
+  const gen = fetchEventDetails({ id: mockId });
 
   it('calls fetchEventDetails apiClient', () => {
     expect(gen.next().value).toEqual(
