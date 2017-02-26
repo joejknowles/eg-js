@@ -12,7 +12,11 @@ export class Events extends Component {
   render() {
     return (
       <div className="events-list">
-        { this.props.events.map(eventId => <Listing id={ eventId } key={ eventId } />) }
+        {
+          this.props.events.map(
+            id => <Listing id={ id } key={ id } />
+          )
+        }
       </div>
     );
   }
