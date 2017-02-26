@@ -5,8 +5,13 @@ exports[`test renders listing as before 1`] = `
     alt="event"
     className="event-image"
     src={undefined} />
-  <h3
-    className="event-title" />
+  <Link
+    onlyActiveOnIndex={false}
+    style={Object {}}
+    to="event/undefined">
+    <h3
+      className="event-title" />
+  </Link>
   <p>
     , at 
   </p>
