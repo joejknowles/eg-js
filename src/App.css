@@ -22,8 +22,11 @@
 }
 
 .event-details {
-  margin: 1em 10%;
+  margin: 1em 15%;
+  margin-top: 110px;
+  padding: 2em;
   min-height: 20em;
+  text-align: left;
 }
 
 .event-listing .event-image {
@@ -34,8 +37,12 @@
 }
 
 .event-details .event-image {
-  float: left;
+  float: right;
   margin: 1em;
   width: 15em;
   height: 15em;
+}
+
+.loading-indicator {
+  margin-left: 20%;
 }
