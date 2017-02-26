@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { eventsLoading } from './loading';
 
 export const eventsById = (state = {}, action) => {
   switch (action.type) {
@@ -36,4 +37,6 @@ export const createEventSelector = (id) => (state) => (
   state.eventsById[id] || {}
 );
 
-export default combineReducers({ eventsById, events });
+export const eventsLoadingSelector = (state) => state.eventsLoading;
+
+export default combineReducers({ eventsById, events, eventsLoading });

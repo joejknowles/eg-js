@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Listing from './listing';
-import { eventsSelector } from '../reducers'
+import LoadingIndicator from './loadingIndicator';
+import { eventsSelector, eventsLoadingSelector } from '../reducers'
 
 export class Events extends Component {
   componentDidMount() {
@@ -10,10 +11,12 @@ export class Events extends Component {
   }
 
   render() {
+    const { props } = this;
+    if (props.eventsLoading) return (<LoadingIndicator />);
     return (
       <div className="events-list">
         {
-          this.props.events.map(
+          props.events.map(
             id => <Listing id={ id } key={ id } />
           )
         }
@@ -23,7 +26,8 @@ export class Events extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  events: eventsSelector(state)
+  events: eventsSelector(state),
+  eventsLoading: eventsLoadingSelector(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({
