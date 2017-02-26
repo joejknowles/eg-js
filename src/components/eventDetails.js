@@ -5,7 +5,8 @@ import { createEventSelector } from '../reducers'
 
 export class EventDetails extends Component {
   componentDidMount() {
-
+    const { fetchEventDetails, id } = this.props;
+    fetchEventDetails(id);
   }
 
   render() {
