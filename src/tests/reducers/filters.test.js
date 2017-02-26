@@ -7,7 +7,7 @@ describe('typeReducer', () => {
 
   it('returns filter on SET_TYPE_FILTER', () => {
     expect(typeReducer(
-      'other', { type: 'SET_TYPE_FILTER', typeFilter: 'filter' }
+      'other', { type: 'SET_TYPE_FILTER', filter: 'filter' }
     )).toEqual('filter');
   });
 });

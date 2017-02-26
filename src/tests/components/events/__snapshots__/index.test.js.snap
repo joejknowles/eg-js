@@ -1,6 +1,6 @@
 exports[`Events Component renders as before 1`] = `
 <div
   className="events-list">
-  
+  <Connect(Component) />
 </div>
 `;
