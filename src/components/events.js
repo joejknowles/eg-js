@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import Listing from './listing';
 import LoadingIndicator from './loadingIndicator';
-import { eventsSelector, eventsLoadingSelector } from '../reducers'
+import { eventsSelector, eventsFirstLoadingSelector } from '../reducers'
 
 export class Events extends Component {
   componentDidMount() {
@@ -27,7 +27,7 @@ export class Events extends Component {
 
 const mapStateToProps = (state) => ({
   events: eventsSelector(state),
-  eventsLoading: eventsLoadingSelector(state)
+  eventsLoading: eventsFirstLoadingSelector(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({

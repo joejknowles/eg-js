@@ -35,6 +35,7 @@ export const createEventSelector = (id) => (state) => (
   state.eventsById[id] || {}
 );
 
-export const eventsLoadingSelector = (state) => state.eventsLoading;
+export const eventsFirstLoadingSelector = (state) =>
+  state.eventsLoading && eventsSelector(state).length < 2;
 
 export default combineReducers({ eventsById, events, eventsLoading });
