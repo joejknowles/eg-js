@@ -27,6 +27,6 @@ describe('EventDetails component', () => {
       />
     );
     component.instance().componentDidMount();
-    expect(fetchEventsMock).toHaveBeenCalledWith("266970");
+    expect(fetchEventDetailsMock).toHaveBeenCalledWith("266970");
   });
 });
