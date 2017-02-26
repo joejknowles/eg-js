@@ -34,11 +34,11 @@ export const eventsSelector = (state) => state.events;
 
 export const currentTypeFilter = (state) => state.filters.type;
 
-export const typeSelector = (state, id) => createEventSelector(id)(state).type;
-
 export const createEventSelector = (id) => (state) => (
   state.eventsById[id] || {}
 );
+
+export const typeSelector = (state, id) => createEventSelector(id)(state).type;
 
 export const eventsFirstLoadingSelector = (state) =>
   state.eventsLoading && eventsSelector(state).length < 2;
