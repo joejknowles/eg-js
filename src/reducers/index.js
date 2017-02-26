@@ -1,14 +1,12 @@
 import { combineReducers } from 'redux';
 import { eventsLoading } from './loading';
+import extend from 'extend';
 
 export const eventsById = (state = {}, action) => {
   switch (action.type) {
     case 'FETCH_EVENTS_SUCCESS':
     case 'FETCH_EVENT_DETAILS_SUCCESS':
-      return {
-        ...state,
-        ...action.response.entities.events
-      };
+      return extend(true, {}, state, action.response.entities.events);
     default:
     return state;
   }
