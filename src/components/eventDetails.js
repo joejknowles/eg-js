@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { createEventSelector } from '../reducers'
+import { createEventSelector } from '../reducers';
+import { fetchEventDetailsRequest } from '../actions';
 
 export class EventDetails extends Component {
   componentDidMount() {
-    const { fetchEventDetails, id } = this.props;
-    fetchEventDetails(id);
+    this.props.fetchEventDetails();
   }
 
   render() {
@@ -23,10 +23,12 @@ export class EventDetails extends Component {
   }
 }
 
-
-
 const mapStateToProps = (state, { params: { id } }) => (
   createEventSelector(id)
 );
 
-export default connect(mapStateToProps)(EventDetails);
+const mapStateToDispatch = (dispatch, { params: { id } }) => ({
+  fetchEventDetails: () => dispatch(fetchEventDetailsRequest(id))
+});
+
+export default connect(mapStateToProps, mapStateToDispatch)(EventDetails);

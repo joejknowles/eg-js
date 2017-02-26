@@ -8,7 +8,7 @@ const shallowRenderer = ReactTestUtils.createRenderer();
 
 describe('EventDetails component', () => {
   const detailProps = {
-    "id":"266970","title":"The Warehouse Project || Tuskegee","date":"Tuesday 27th December","image":"http://d13rtmsmlweq99.cloudfront.net/cms_media/images/events/948e6b789115dac236b33b5f606600ef.1467646509.jpg","type":"club","venue":"Store Steet, Manchester"
+    "id": "266970","title":"The Warehouse Project || Tuskegee","date":"Tuesday 27th December","image":"http://d13rtmsmlweq99.cloudfront.net/cms_media/images/events/948e6b789115dac236b33b5f606600ef.1467646509.jpg","type":"club","venue":"Store Steet, Manchester"
   };
 
   it('renders as before', () => {
@@ -27,6 +27,6 @@ describe('EventDetails component', () => {
       />
     );
     component.instance().componentDidMount();
-    expect(fetchEventDetailsMock).toHaveBeenCalledWith("266970");
+    expect(fetchEventDetailsMock).toHaveBeenCalledWith();
   });
 });
