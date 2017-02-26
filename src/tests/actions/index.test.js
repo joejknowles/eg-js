@@ -1,4 +1,8 @@
-import { fetchEventsSuccess, fetchEventDetailsRequest } from '../../actions';
+import {
+  fetchEventsSuccess,
+  fetchEventDetailsRequest,
+  fetchEventDetailsSuccess
+} from '../../actions';
 
 describe('fetchEventsSuccess', () => {
   it('creates action', () => {
@@ -26,6 +30,24 @@ describe('fetchEventDetailsRequest', () => {
     expect(fetchEventDetailsRequest(mockId)).toEqual({
       type: 'FETCH_EVENT_DETAILS_REQUEST',
       id: mockId
+    })
+  });
+});
+
+describe('fetchEventDetailsSuccess', () => {
+  it('creates action', () => {
+    const rawResponse = { id: '123' };
+    const expectedResponse = {
+      entities: {
+        events: {
+          '123': { id: '123'}
+        }
+      },
+      result: '123'
+    };
+    expect(fetchEventDetailsSuccess(rawResponse)).toEqual({
+      type: 'FETCH_EVENT_DETAILS_SUCCESS',
+      response: expectedResponse
     })
   });
 });
