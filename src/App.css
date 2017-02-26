@@ -9,8 +9,7 @@
   color: white;
 }
 
-.event-listing {
-  margin: 1em 30%;
+.event-listing, .event-details {
   padding: 0.5em;
   font-size: 1em;
   -webkit-box-shadow: 6px 6px 20px -8px rgba(0,0,0,0.75);
@@ -18,9 +17,25 @@
   box-shadow: 3px 3px 30px -8px rgba(0,0,0,0.75);
 }
 
-.event-image {
+.event-listing {
+  margin: 1em 30%;
+}
+
+.event-details {
+  margin: 1em 10%;
+  min-height: 20em;
+}
+
+.event-listing .event-image {
   float: left;
   margin: 0.5em;
   width: 5em;
   height: 5em;
+}
+
+.event-details .event-image {
+  float: left;
+  margin: 1em;
+  width: 15em;
+  height: 15em;
 }
