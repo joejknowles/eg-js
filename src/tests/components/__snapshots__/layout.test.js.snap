@@ -1,0 +1,24 @@
+exports[`test renders layout as before 1`] = `
+<div
+  className="App">
+  <div
+    className="App-header">
+    <h2>
+      <a
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+          }
+        }>
+        EG Tech Test
+      </a>
+    </h2>
+  </div>
+  <div
+    className="content">
+    <div
+      className="child" />
+  </div>
+</div>
+`;
