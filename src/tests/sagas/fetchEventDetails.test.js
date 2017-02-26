@@ -6,7 +6,7 @@ import * as apiClients from '../../apiClients';
 
 it('watchEventDetailsRequests', () => (
   expect(watchEventDetailsRequests().next().value).toEqual(
-    takeEvery('FETCH_EVENT_DETAILS_REQUEST', fetchEvents)
+    takeEvery('FETCH_EVENT_DETAILS_REQUEST', fetchEventDetails)
   )
 ));
 
