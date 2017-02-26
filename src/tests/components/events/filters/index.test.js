@@ -2,7 +2,7 @@ import { Filters } from '../../../../components/events/filters';
 
 import React from 'react';
 import ReactTestUtils from 'react-addons-test-utils';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 const shallowRenderer = ReactTestUtils.createRenderer();
 
@@ -14,7 +14,7 @@ describe('Filters component', () => {
 
   it('calls on type filter Change', () => {
     const mock = jest.fn();
-    const component = shallow(
+    const component = mount(
       <Filters
         onTypeFilterChange={ mock }
       />

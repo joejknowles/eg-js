@@ -1,0 +1,21 @@
+exports[`test renders type filter as before 1`] = `
+<select
+  onChange={[Function]}>
+  <option
+    value="">
+    Select type
+  </option>
+  <option
+    value="all">
+    all
+  </option>
+  <option
+    value="gig">
+    gig
+  </option>
+  <option
+    value="other">
+    other
+  </option>
+</select>
+`;

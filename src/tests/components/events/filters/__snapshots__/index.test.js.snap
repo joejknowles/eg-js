@@ -1,9 +1,7 @@
 exports[`Filters component renders as before 1`] = `
 <div
   className="Filters">
-  <select
-    onChange={[Function]}>
-    <div />
-  </select>
+  <Unknown
+    onChange={undefined} />
 </div>
 `;
