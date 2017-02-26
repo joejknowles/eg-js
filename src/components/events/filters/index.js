@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 
 export const Filters = (props) => (
   <div className='Filters'>
-    <input onChange={ event => props.onTypeFilterChange(event.target.value) } ></input>
+    <select onChange={ event => props.onTypeFilterChange(event.target.value) } >
+      <div></div>
+    </select>
   </div>
 );
 

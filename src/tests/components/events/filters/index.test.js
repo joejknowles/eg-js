@@ -1,4 +1,4 @@
-import { Filters } from '../../../components/events/filters';
+import { Filters } from '../../../../components/events/filters';
 
 import React from 'react';
 import ReactTestUtils from 'react-addons-test-utils';
@@ -19,7 +19,7 @@ describe('Filters component', () => {
         onTypeFilterChange={ mock }
       />
     );
-    component.find('input').first().simulate('change', { target: { value: 'gigs' } });
+    component.find('select').first().simulate('change', { target: { value: 'gigs' } });
     expect(mock).toHaveBeenCalledWith('gigs');
   });
 });
