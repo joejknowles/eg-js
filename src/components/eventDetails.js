@@ -4,6 +4,10 @@ import { connect } from 'react-redux';
 import { createEventSelector } from '../reducers'
 
 export class EventDetails extends Component {
+  componentDidMount() {
+
+  }
+
   render() {
     const props = this.props;
     return (
