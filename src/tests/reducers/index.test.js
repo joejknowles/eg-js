@@ -13,6 +13,21 @@ describe('eventsById', () => {
     });
     expect(actual).toEqual(events);
   });
+
+  it('adds event details on fetch success', () => {
+    const prevState = { '292': { id: '292' } };
+    const events = { '125': { id: '125' } };
+    const actual = eventsById(prevState, {
+      type: 'FETCH_EVENT_DETAILS_SUCCESS',
+      response: {
+        entities: { events }, result: '125'
+      }
+    });
+    expect(actual).toEqual({
+      ...prevState,
+      ...events
+    });
+  });
 });
 
 describe('events', () => {
@@ -27,5 +42,16 @@ describe('events', () => {
       response: { result }
     })
     expect(actual).toEqual(result);
+  });
+
+
+  it('adds event on fetch success', () => {
+    const prevState = ['2', '9'];
+    const result = '123';
+    const actual = events(prevState, {
+      type: 'FETCH_EVENT_DETAILS_SUCCESS',
+      response: { result }
+    })
+    expect(actual).toEqual([ ...prevState, result ]);
   });
 });

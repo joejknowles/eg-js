@@ -1,17 +1,33 @@
 import { combineReducers } from 'redux';
 
 export const eventsById = (state = {}, action) => {
-  if (action.type === 'FETCH_EVENTS_SUCCESS') {
-    return action.response.entities.events;
+  switch (action.type) {
+    case 'FETCH_EVENTS_SUCCESS':
+    case 'FETCH_EVENT_DETAILS_SUCCESS':
+      return {
+        ...state,
+        ...action.response.entities.events
+      };
+    default:
+    return state;
   }
-  return state;
 };
 
 export const events = (state = [], action) => {
-  if (action.type === 'FETCH_EVENTS_SUCCESS') {
-    return action.response.result;
+  switch (action.type) {
+    case 'FETCH_EVENTS_SUCCESS':
+      return action.response.result;
+    case 'FETCH_EVENT_DETAILS_SUCCESS':
+      const newId = action.response.result;
+      const idExists = state.indexOf(newId) !== -1;
+      if (idExists) {
+        return state;
+      } else {
+        return [ ...state, newId ];
+      }
+    default:
+    return state;
   }
-  return state;
 };
 
 export const eventsSelector = (state) => state.events;
