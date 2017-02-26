@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Listing from './listing';
-import LoadingIndicator from './loadingIndicator';
-import { eventsFirstLoadingSelector } from '../reducers';
-import { filteredEventsSelector } from '../selectors/filter'
+import Listing from '../listing';
+import LoadingIndicator from '../loadingIndicator';
+import { eventsFirstLoadingSelector } from '../../reducers';
+import { filteredEventsSelector } from '../../selectors/filter'
 
 export class Events extends Component {
   componentDidMount() {
