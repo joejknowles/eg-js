@@ -3,10 +3,17 @@
 }
 
 .App-header {
-  background-color: #222;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.8);
   height: 70px;
+  width: 100%;
   padding: 10px;
   color: white;
+}
+
+.events-list {
+  margin-top: 110px;
 }
 
 .event-listing, .event-details {
