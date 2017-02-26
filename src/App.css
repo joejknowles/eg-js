@@ -53,6 +53,6 @@
   height: 15em;
 }
 
-.loading-indicator {
+span .loading-indicator {
   margin-left: 20%;
 }
