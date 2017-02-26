@@ -28,9 +28,12 @@
   margin: 1em 30%;
 }
 
+.content {
+  margin-top: 110px;
+}
+
 .event-details {
   margin: 1em 15%;
-  margin-top: 110px;
   padding: 2em;
   min-height: 20em;
   text-align: left;

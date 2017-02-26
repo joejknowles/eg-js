@@ -10,8 +10,10 @@ export default () => (
     <div className="App-header">
       <h2>EG Tech Test</h2>
     </div>
-    <Provider store={ configureStore() } >
-      <Routes />
-    </Provider>
+    <div className="content">
+      <Provider store={ configureStore() } >
+        <Routes />
+      </Provider>
+    </div>
   </div>
 );
