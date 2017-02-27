@@ -34,6 +34,12 @@
   margin-top: 110px;
 }
 
+.Filters input, .Filters select {
+  font-size: 1em;
+  width: 9em;
+  margin: auto 1em;
+}
+
 .event-details {
   margin: 1em 10%;
   padding: 2em;
