@@ -2,6 +2,25 @@ exports[`Filters component renders as before 1`] = `
 <div
   className="Filters">
   <Unknown
-    onChange={undefined} />
+    name="type"
+    onChange={undefined}
+    options={
+      Array [
+        "gig",
+        "other",
+      ]
+    } />
+  <Unknown
+    name="location"
+    onChange={undefined}
+    options={
+      Array [
+        "Manchester",
+        "Ibiza",
+      ]
+    } />
+  <input
+    onChange={[Function]}
+    placeholder="search..." />
 </div>
 `;
