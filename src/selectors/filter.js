@@ -1,14 +1,13 @@
 import { eventsSelector, typeSelector, currentTypeFilter } from '../reducers';
 
-export const eventsFilteredByType = (state) => {
-  const newList = [];
-  const all = eventsSelector(state);
-  const filterType = currentTypeFilter(state);
-  if (!filterType) {
-    return all;
+export const eventsFilteredByType = (state, events) => {
+  const typeFilter = currentTypeFilter(state);
+  if (!typeFilter) {
+    return events;
   }
-  all.forEach(id => {
-    if(typeSelector(state, id) === filterType) {
+  const newList = [];
+  events.forEach(id => {
+    if(typeSelector(state, id) === typeFilter) {
       newList.push(id)
     }
   })
@@ -16,5 +15,7 @@ export const eventsFilteredByType = (state) => {
 }
 
 export const filteredEventsSelector = (state) => {
-  return eventsFilteredByType(state)
+  let events = eventsSelector(state);
+  events = eventsFilteredByType(state, events);
+  return events;
 };
