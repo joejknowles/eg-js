@@ -1,8 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import throttle from 'lodash.throttle';
 
 import { FilterDropDown } from './dropDown'
+import {
+  setTypeFilter,
+  setLocationFilter,
+  createThrottledTitleSearch
+} from '../../../actions'
 
 const typeOptions = [
   'gig',
@@ -25,23 +29,16 @@ export const Filters = (props) => (
       options={ locationOptions }
       onChange={ props.onLocationFilterChange }/>
     <input placeholder="search..."
-      onChange={ (e) => {
-        const value = e.target.value;
-        value.length > 2 && props.onTitleSearch(value);
-      } }
+      onChange={ (e) =>  props.onTitleSearchChange(e.target.value) }
     />
   </div>
 );
 
 const mapStateToDispatch = (dispatch) => {
-  const throttledTitleSearch = throttle(
-    (term) => dispatch({ type: 'SET_TITLE_SEARCH', term}),
-    500
-  );
   return {
-    onTypeFilterChange: (filter) => dispatch({ type: 'SET_TYPE_FILTER', filter}),
-    onLocationFilterChange: (filter) => dispatch({ type: 'SET_LOCATION_FILTER', filter}),
-    onTitleSearch: (term) => throttledTitleSearch(term)
+    onTypeFilterChange: (filter) => dispatch(setTypeFilter(filter)),
+    onLocationFilterChange: (filter) => dispatch(setLocationFilter(filter)),
+    onTitleSearchChange: createThrottledTitleSearch(dispatch)
   }
 };
 

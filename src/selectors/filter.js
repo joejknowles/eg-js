@@ -19,7 +19,7 @@ const passesLocationFilter = (state, id) => (
 )
 
 const passesSearch = (value, term) => (
-  term ? (value || '').includes(term) : true
+  term && term.length > 2 ? (value || '').includes(term) : true
 );
 
 const passesTitleSearch = (state, id) => (
