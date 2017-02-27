@@ -33,11 +33,17 @@ export const Filters = (props) => (
   </div>
 );
 
-const mapStateToDispatch = (dispatch) => ({
-  onTypeFilterChange: (filter) => dispatch({ type: 'SET_TYPE_FILTER', filter}),
-  onLocationFilterChange: (filter) => dispatch({ type: 'SET_LOCATION_FILTER', filter}),
-  onTitleSearch: (term) => throttle(dispatch({ type: 'SET_TITLE_SEARCH', term}))
-});
+const mapStateToDispatch = (dispatch) => {
+  const throttledTitleSearch = throttle(
+    (term) => dispatch({ type: 'SET_TITLE_SEARCH', term}),
+    500
+  );
+  return {
+    onTypeFilterChange: (filter) => dispatch({ type: 'SET_TYPE_FILTER', filter}),
+    onLocationFilterChange: (filter) => dispatch({ type: 'SET_LOCATION_FILTER', filter}),
+    onTitleSearch: (term) => throttledTitleSearch(term)
+  }
+};
 
 
 export default connect(undefined, mapStateToDispatch)(Filters);
