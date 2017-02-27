@@ -3,7 +3,7 @@ exports[`test renders type filter as before 1`] = `
   onChange={[Function]}>
   <option
     value="">
-    Select 
+    Any 
   </option>
 </select>
 `;
