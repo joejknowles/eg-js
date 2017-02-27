@@ -7,4 +7,18 @@ export const typeReducer = (state = '', action) => {
   return state
 };
 
-export default combineReducers({ type: typeReducer });
+export const location = (state = '', action) => {
+  if (action.type === 'SET_LOCATION_FILTER') {
+    return action.filter;
+  }
+  return state
+};
+
+export const titleSearch = (state = '', action) => {
+  if (action.type === 'SET_TITLE_SEARCH') {
+    return action.term;
+  }
+  return state
+};
+
+export default combineReducers({ type: typeReducer, location, titleSearch });

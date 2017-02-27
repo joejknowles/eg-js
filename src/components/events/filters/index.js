@@ -42,5 +42,4 @@ const mapStateToDispatch = (dispatch) => {
   }
 };
 
-
 export default connect(undefined, mapStateToDispatch)(Filters);
