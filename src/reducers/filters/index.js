@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux';
 
+import options from './options'
+
 export const typeReducer = (state = '', action) => {
   if (action.type === 'SET_TYPE_FILTER') {
     return action.filter;
@@ -21,4 +23,4 @@ export const titleSearch = (state = '', action) => {
   return state
 };
 
-export default combineReducers({ type: typeReducer, location, titleSearch });
+export default combineReducers({ type: typeReducer, location, titleSearch, options });
