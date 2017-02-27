@@ -1,7 +1,6 @@
 import React from 'react';
 
 const typeOptions = [
-  'all',
   'gig',
   'other'
 ]
