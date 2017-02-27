@@ -1,14 +1,9 @@
 import React from 'react';
 
-const typeOptions = [
-  'gig',
-  'other'
-]
-
-export const TypeFilter = (props) => (
+export const FilterDropDown = (props) => (
   <select onChange={ event => props.onChange(event.target.value) } >
-    <option key='all' value=''>Select type</option>
-    { typeOptions.map(
+    <option key='all' value=''>Select { props.name }</option>
+    { props.options.map(
       t => <option
         key={ t }
         value={ t }>
