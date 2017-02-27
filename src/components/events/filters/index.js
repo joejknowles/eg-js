@@ -8,27 +8,17 @@ import {
   setTitleSearch
 } from '../../../actions';
 
-import { typeFilter, locationFilter, titleSearch } from '../../../reducers';
-
-const typeOptions = [
-  'gig',
-  'other'
-];
-
-const locationOptions = [
-  'Manchester',
-  'Ibiza'
-];
+import { typeFilter, locationFilter, titleSearch, typeOptions, locationOptions } from '../../../reducers';
 
 export const Filters = (props) => (
   <div className='Filters'>
     <FilterDropDown selected={ props.type }
       name="type"
-      options={ typeOptions }
+      options={ props.typeOptions }
       onChange={ props.onTypeFilterChange }/>
     <FilterDropDown selected={ props.location }
       name="location"
-      options={ locationOptions }
+      options={ props.locationOptions }
       onChange={ props.onLocationFilterChange }/>
     <input placeholder="search..." value={ props.titleSearch }
       onChange={ (e) =>  props.onTitleSearchChange(e.target.value) }
@@ -39,7 +29,9 @@ export const Filters = (props) => (
 const mapStateToProps = (state) => ({
   type: typeFilter(state),
   location: locationFilter(state),
-  titleSearch: titleSearch(state)
+  titleSearch: titleSearch(state),
+  typeOptions: typeOptions(state),
+  locationOptions: locationOptions(state)
 });
 
 const mapStateToDispatch = (dispatch) => {

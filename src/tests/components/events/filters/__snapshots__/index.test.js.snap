@@ -4,22 +4,12 @@ exports[`Filters component renders as before 1`] = `
   <Unknown
     name="type"
     onChange={undefined}
-    options={
-      Array [
-        "gig",
-        "other",
-      ]
-    }
+    options={undefined}
     selected={undefined} />
   <Unknown
     name="location"
     onChange={undefined}
-    options={
-      Array [
-        "Manchester",
-        "Ibiza",
-      ]
-    }
+    options={undefined}
     selected={undefined} />
   <input
     onChange={[Function]}

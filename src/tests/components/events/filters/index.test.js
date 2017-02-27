@@ -17,6 +17,8 @@ describe('Filters component', () => {
     const component = mount(
       <Filters
         onTypeFilterChange={ mock }
+        typeOptions={ [] }
+        locationOptions={ [] }
       />
     );
     component.find('select').first().simulate('change', { target: { value: 'gigs' } });
