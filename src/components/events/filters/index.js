@@ -6,7 +6,9 @@ import {
   setTypeFilter,
   setLocationFilter,
   createThrottledTitleSearch
-} from '../../../actions'
+} from '../../../actions';
+
+import { typeFilter, locationFilter, titleSearch } from '../../../reducers';
 
 const typeOptions = [
   'gig',
@@ -20,19 +22,25 @@ const locationOptions = [
 
 export const Filters = (props) => (
   <div className='Filters'>
-    <FilterDropDown
+    <FilterDropDown selected={ props.type }
       name="type"
       options={ typeOptions }
       onChange={ props.onTypeFilterChange }/>
-    <FilterDropDown
+    <FilterDropDown selected={ props.location }
       name="location"
       options={ locationOptions }
       onChange={ props.onLocationFilterChange }/>
-    <input placeholder="search..."
+    <input placeholder="search..." value={ props.titleSearch }
       onChange={ (e) =>  props.onTitleSearchChange(e.target.value) }
     />
   </div>
 );
+
+const mapStateToProps = (state) => ({
+  type: typeFilter(state),
+  location: locationFilter(state),
+  titleSearch: titleSearch(state)
+});
 
 const mapStateToDispatch = (dispatch) => {
   return {
@@ -42,4 +50,4 @@ const mapStateToDispatch = (dispatch) => {
   }
 };
 
-export default connect(undefined, mapStateToDispatch)(Filters);
+export default connect(mapStateToProps, mapStateToDispatch)(Filters);
