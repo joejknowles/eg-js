@@ -12,11 +12,11 @@ import { typeFilter, locationFilter, titleSearch, typeOptions, locationOptions }
 
 export const Filters = (props) => (
   <div className='Filters'>
-    <FilterDropDown selected={ props.type }
+    <FilterDropDown value={ props.type }
       name="type"
       options={ props.typeOptions }
       onChange={ props.onTypeFilterChange }/>
-    <FilterDropDown selected={ props.location }
+    <FilterDropDown value={ props.location }
       name="location"
       options={ props.locationOptions }
       onChange={ props.onLocationFilterChange }/>
