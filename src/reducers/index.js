@@ -32,13 +32,19 @@ export const events = (state = [], action) => {
 
 export const eventsSelector = (state) => state.events;
 
-export const currentTypeFilter = (state) => state.filters.type;
+export const typeFilter = (state) => state.filters.type;
+
+export const locationFilter = (state) => state.filters.location;
+
+export const titleSearch = (state) => state.filters.titleSearch;
 
 export const createEventSelector = (id) => (state) => (
   state.eventsById[id] || {}
 );
 
 export const typeSelector = (state, id) => createEventSelector(id)(state).type;
+
+export const titleSelector = (state, id) => createEventSelector(id)(state).title;
 
 export const eventsFirstLoadingSelector = (state) =>
   state.eventsLoading && eventsSelector(state).length < 2;
