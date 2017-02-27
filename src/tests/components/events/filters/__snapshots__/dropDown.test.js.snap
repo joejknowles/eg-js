@@ -1,6 +1,7 @@
 exports[`test renders type filter as before 1`] = `
 <select
-  onChange={[Function]}>
+  onChange={[Function]}
+  value={undefined}>
   <option
     value="">
     Any 

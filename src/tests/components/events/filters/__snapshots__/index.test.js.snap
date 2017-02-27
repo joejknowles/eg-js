@@ -5,12 +5,12 @@ exports[`Filters component renders as before 1`] = `
     name="type"
     onChange={undefined}
     options={undefined}
-    selected={undefined} />
+    value={undefined} />
   <Unknown
     name="location"
     onChange={undefined}
     options={undefined}
-    selected={undefined} />
+    value={undefined} />
   <input
     onChange={[Function]}
     placeholder="search..."
