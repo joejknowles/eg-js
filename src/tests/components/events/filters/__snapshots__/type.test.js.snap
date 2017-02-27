@@ -6,10 +6,6 @@ exports[`test renders type filter as before 1`] = `
     Select type
   </option>
   <option
-    value="all">
-    all
-  </option>
-  <option
     value="gig">
     gig
   </option>
