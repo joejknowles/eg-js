@@ -12,6 +12,10 @@
   color: white;
 }
 
+.content {
+  margin-top: 110px;
+}
+
 .events-list {
   margin-top: 110px;
 }
@@ -28,10 +32,6 @@
   width: 40%;
   min-width: 25em;
   margin: 1em auto;
-}
-
-.content {
-  margin-top: 110px;
 }
 
 .Filters input, .Filters select {
