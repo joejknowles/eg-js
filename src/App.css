@@ -25,7 +25,9 @@
 }
 
 .event-listing {
-  margin: 1em 30%;
+  width: 40%;
+  min-width: 25em;
+  margin: 1em auto;
 }
 
 .content {
@@ -33,7 +35,7 @@
 }
 
 .event-details {
-  margin: 1em 15%;
+  margin: 1em 10%;
   padding: 2em;
   min-height: 20em;
   text-align: left;
