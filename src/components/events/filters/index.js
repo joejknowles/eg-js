@@ -5,7 +5,7 @@ import { FilterDropDown } from './dropDown'
 import {
   setTypeFilter,
   setLocationFilter,
-  createThrottledTitleSearch
+  setTitleSearch
 } from '../../../actions';
 
 import { typeFilter, locationFilter, titleSearch } from '../../../reducers';
@@ -46,7 +46,7 @@ const mapStateToDispatch = (dispatch) => {
   return {
     onTypeFilterChange: (filter) => dispatch(setTypeFilter(filter)),
     onLocationFilterChange: (filter) => dispatch(setLocationFilter(filter)),
-    onTitleSearchChange: createThrottledTitleSearch(dispatch)
+    onTitleSearchChange: (term) => dispatch(setTitleSearch(term))
   }
 };
 

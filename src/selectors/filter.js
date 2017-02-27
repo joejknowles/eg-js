@@ -7,6 +7,7 @@ import {
   titleSearch
 } from '../reducers';
 import { locationSelector } from '../selectors/location';
+import throttle from 'lodash.throttle';
 
 const passesFilter = (value, filter) => (filter ? value === filter : true);
 
@@ -32,7 +33,13 @@ const passesAllFilters = (state, id) => (
     passesTitleSearch(state, id)
 );
 
-export const filteredEventsSelector = (state) => {
-  let events = eventsSelector(state);
-  return [ ...events ].filter(id => passesAllFilters(state, id));
-};
+export const createFilteredEventsSelector = () => (
+  throttle((state) => {
+    let events = eventsSelector(state);
+    return [
+      ...events
+    ].filter(
+      id => passesAllFilters(state, id)
+    ).slice(0, 100);
+  }, 10)
+);

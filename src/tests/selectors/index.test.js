@@ -1,4 +1,4 @@
-import { filteredEventsSelector } from '../../selectors/filter';
+import { createFilteredEventsSelector } from '../../selectors/filter';
 
 describe('filteredEventsSelector', () => {
   const eventsById = {
@@ -9,7 +9,7 @@ describe('filteredEventsSelector', () => {
   const events = [1,2,3];
   const mockState = { eventsById, events };
   it('returns correct ids for gig filter', () => (
-    expect(filteredEventsSelector(
+    expect(createFilteredEventsSelector()(
       {
         ...mockState,
         filters: { type: 'gig' }
@@ -18,7 +18,7 @@ describe('filteredEventsSelector', () => {
   ));
 
   it('returns correct ids for location filter', () => (
-    expect(filteredEventsSelector(
+    expect(createFilteredEventsSelector()(
       {
         ...mockState,
         filters: { location: 'Manchester' }
@@ -27,7 +27,7 @@ describe('filteredEventsSelector', () => {
   ));
 
   it('returns correct ids for title search filter', () => (
-    expect(filteredEventsSelector(
+    expect(createFilteredEventsSelector()(
       {
         ...mockState,
         filters: { titleSearch: 'Glow' }
@@ -36,7 +36,7 @@ describe('filteredEventsSelector', () => {
   ));
 
   it('returns all ids when no filters', () => (
-    expect(filteredEventsSelector(
+    expect(createFilteredEventsSelector()(
       {
         ...mockState, filters: {}
       }

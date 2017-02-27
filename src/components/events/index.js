@@ -5,7 +5,7 @@ import Listing from '../listing';
 import Filters from './filters';
 import LoadingIndicator from '../loadingIndicator';
 import { eventsFirstLoadingSelector } from '../../reducers';
-import { filteredEventsSelector } from '../../selectors/filter'
+import { createFilteredEventsSelector } from '../../selectors/filter'
 
 export class Events extends Component {
   componentDidMount() {
@@ -28,10 +28,13 @@ export class Events extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  events: filteredEventsSelector(state),
-  eventsLoading: eventsFirstLoadingSelector(state)
-});
+const mapStateToProps = (state) => {
+  const filteredEventsSelector = createFilteredEventsSelector();
+  return (state) => ({
+    events: filteredEventsSelector(state),
+    eventsLoading: eventsFirstLoadingSelector(state)
+  });
+};
 
 const mapDispatchToProps = (dispatch) => ({
   fetchEvents: () => dispatch({ type: "FETCH_EVENTS_REQUEST" })

@@ -9,7 +9,8 @@ exports[`Filters component renders as before 1`] = `
         "gig",
         "other",
       ]
-    } />
+    }
+    selected={undefined} />
   <Unknown
     name="location"
     onChange={undefined}
@@ -18,9 +19,11 @@ exports[`Filters component renders as before 1`] = `
         "Manchester",
         "Ibiza",
       ]
-    } />
+    }
+    selected={undefined} />
   <input
     onChange={[Function]}
-    placeholder="search..." />
+    placeholder="search..."
+    value={undefined} />
 </div>
 `;

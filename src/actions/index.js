@@ -1,6 +1,5 @@
 import { normalize } from 'normalizr';
 import { arrayOfEvents, event } from '../schema';
-import throttle from 'lodash.throttle';
 
 export const fetchEventsSuccess = (response) => ({
   type: 'FETCH_EVENTS_SUCCESS',
@@ -25,9 +24,6 @@ export const setLocationFilter = (filter) => ({
   type: 'SET_LOCATION_FILTER', filter
 });
 
-export const createThrottledTitleSearch = (dispatch) => (
-  throttle(
-    (term) => dispatch({ type: 'SET_TITLE_SEARCH', term}),
-    500
-  )
-);
+export const setTitleSearch = (term) => ({
+  type: 'SET_TITLE_SEARCH', term
+});
