@@ -2,16 +2,12 @@ exports[`test renders event image as before with url 1`] = `
 <img
   alt="event"
   className="event-image"
-  src={
-    Object {
-      "url": "something",
-    }
-  } />
+  src="something" />
 `;
 
 exports[`test renders event image as before without url 1`] = `
 <img
   alt="event"
   className="event-image"
-  src={Object {}} />
+  src="https://placehold.it/100x100?text=IMAGE" />
 `;
