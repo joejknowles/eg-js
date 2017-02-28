@@ -1,7 +1,8 @@
 import {
   fetchEventsSuccess,
   fetchEventDetailsRequest,
-  fetchEventDetailsSuccess
+  fetchEventDetailsSuccess,
+  fetchEventDetailsFailure,
 } from '../../actions';
 
 describe('fetchEventsSuccess', () => {
@@ -48,6 +49,16 @@ describe('fetchEventDetailsSuccess', () => {
     expect(fetchEventDetailsSuccess(rawResponse)).toEqual({
       type: 'FETCH_EVENT_DETAILS_SUCCESS',
       response: expectedResponse
+    })
+  });
+});
+
+describe('fetchEventDetailsFailure', () => {
+  it('creates action', () => {
+    const response = { errors: ['not found'] };
+    expect(fetchEventDetailsFailure(response)).toEqual({
+      type: 'FETCH_EVENT_DETAILS_FAILURE',
+      response
     })
   });
 });

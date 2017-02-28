@@ -1,6 +1,9 @@
 import { call, takeEvery, put } from 'redux-saga/effects';
 import * as apiClients from '../apiClients';
-import { fetchEventsSuccess, fetchEventDetailsSuccess } from '../actions';
+import {
+  fetchEventsSuccess,
+  fetchEventDetailsSuccess,
+  fetchEventDetailsFailure } from '../actions';
 
 export function* fetchEvents() {
   const response = yield call(apiClients.fetchEvents);
@@ -12,8 +15,12 @@ export function* watchEventsRequests() {
 }
 
 export function* fetchEventDetails({ id }) {
-  const response = yield call(apiClients.fetchEventDetails, id);
-  yield put(fetchEventDetailsSuccess(response));
+  try {
+    const response = yield call(apiClients.fetchEventDetails, id);
+    yield put(fetchEventDetailsSuccess(response));
+  } catch (e) {
+    yield put(fetchEventDetailsFailure(e));
+  }
 }
 
 export function* watchEventDetailsRequests() {

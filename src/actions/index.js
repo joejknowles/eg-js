@@ -16,6 +16,11 @@ export const fetchEventDetailsSuccess = (response) => ({
   response: normalize(response, event)
 });
 
+export const fetchEventDetailsFailure = (response) => ({
+  type: 'FETCH_EVENT_DETAILS_FAILURE',
+  response
+});
+
 export const setTypeFilter = (filter) => ({
   type: 'SET_TYPE_FILTER', filter
 });

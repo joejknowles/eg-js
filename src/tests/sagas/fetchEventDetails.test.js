@@ -1,7 +1,7 @@
 import { watchEventDetailsRequests, fetchEventDetails } from '../../sagas';
 
 import { call, takeEvery, put } from 'redux-saga/effects';
-import { fetchEventDetailsSuccess } from '../../actions';
+import { fetchEventDetailsSuccess, fetchEventDetailsFailure } from '../../actions';
 import * as apiClients from '../../apiClients';
 
 it('watchEventDetailsRequests', () => (
@@ -23,6 +23,25 @@ describe('fetchEventDetails saga', () => {
   it('puts fetchEventDetails response', () => {
     expect(gen.next({ response: [] }).value).toEqual(
       put(fetchEventDetailsSuccess({ response: [] }))
+    );
+  });
+
+  it('ends', () => {
+    expect(gen.next()).toEqual(
+      { done: true, value: undefined }
+    );
+  });
+});
+
+describe('fetchEventDetails on failure', () => {
+  const mockId = '10900'
+  const gen = fetchEventDetails({ id: mockId });
+  gen.next()
+
+  it('puts fetchEventDetailsFailure', () => {
+    const serverResponse = { errors: ['slot not found']};
+    expect(gen.throw(serverResponse).value).toEqual(
+      put(fetchEventDetailsFailure(serverResponse))
     );
   });
 
