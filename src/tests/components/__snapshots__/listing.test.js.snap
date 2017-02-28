@@ -1,10 +1,8 @@
 exports[`test renders listing as before 1`] = `
 <div
   className="event-listing">
-  <img
-    alt="event"
-    className="event-image"
-    src={undefined} />
+  <Unknown
+    url={undefined} />
   <Link
     onlyActiveOnIndex={false}
     style={Object {}}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Details from './details';
+import EventImage from '../eventImage';
 
 import { createEventSelector } from '../../reducers';
 import { fetchEventDetailsRequest } from '../../actions';
@@ -15,7 +16,7 @@ export class EventDetails extends Component {
     const props = this.props;
     return (
       <div key={ props.id } className="event-details">
-        <img src={ props.image } className="event-image" alt="event" />
+        <EventImage url={ props.image } />
         <div className="event-info">
           <h2 className="event-title" dangerouslySetInnerHTML={ { __html: props.title } }/>
           <Details { ...props } />

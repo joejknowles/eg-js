@@ -1,0 +1,17 @@
+exports[`test renders event image as before with url 1`] = `
+<img
+  alt="event"
+  className="event-image"
+  src={
+    Object {
+      "url": "something",
+    }
+  } />
+`;
+
+exports[`test renders event image as before without url 1`] = `
+<img
+  alt="event"
+  className="event-image"
+  src={Object {}} />
+`;
