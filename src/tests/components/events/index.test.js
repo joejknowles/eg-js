@@ -7,8 +7,18 @@ import { shallow } from 'enzyme';
 const shallowRenderer = ReactTestUtils.createRenderer();
 
 describe('Events Component', () => {
-  it('renders as before', () => {
+  it('renders as before with an event', () => {
+    const component = shallowRenderer.render(<Events events={ [ 1 ] } />);
+    expect(component).toMatchSnapshot();
+  });
+
+  it('renders as before with no events', () => {
     const component = shallowRenderer.render(<Events events={ [] } />);
+    expect(component).toMatchSnapshot();
+  });
+
+  it('renders as before while loading', () => {
+    const component = shallowRenderer.render(<Events eventsLoading={ true } />);
     expect(component).toMatchSnapshot();
   });
 

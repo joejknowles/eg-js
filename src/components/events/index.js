@@ -19,9 +19,12 @@ export class Events extends Component {
       <div className="events-list">
         <Filters />
         {
-          props.events.map(
-            id => <Listing id={ id } key={ id } />
-          )
+          props.events.length < 1 ?
+            <p className="no-events-msg">No Events Found</p>
+              :
+            props.events.map(
+              id => <Listing id={ id } key={ id } />
+            )
         }
       </div>
     );

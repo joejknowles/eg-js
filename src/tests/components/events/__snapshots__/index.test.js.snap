@@ -1,6 +1,21 @@
-exports[`Events Component renders as before 1`] = `
+exports[`Events Component renders as before while loading 1`] = `<LoadingIndicator />`;
+
+exports[`Events Component renders as before with an event 1`] = `
 <div
   className="events-list">
   <Connect(Component) />
+  <Connect(Component)
+    id={1} />
+</div>
+`;
+
+exports[`Events Component renders as before with no events 1`] = `
+<div
+  className="events-list">
+  <Connect(Component) />
+  <p
+    className="no-events-msg">
+    No Events Found
+  </p>
 </div>
 `;
